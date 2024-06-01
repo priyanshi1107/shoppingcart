@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "830ae31d-c739-42d9-9ea5-80fee0098861",
+		"name": "shoppingcart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8181/saveProducts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\r\n        \"productName\":\"Iphone\",\r\n        \"price\":1200,\r\n        \"imageUrl\":\"https://d28i4xct2kl5lp.cloudfront.net/product_images/79593_d0e913e5-f2ee-4bae-b6ff-49ac7e2fc283.jpg\",\r\n        \"maxQtyAllowed\":2\r\n    },\r\n    {\r\n        \"productName\":\"One Plus 9\",\r\n        \"price\":1000,\r\n        \"imageUrl\":\"https://cdn.mos.cms.futurecdn.net/dqhGrKneeXCGFBotqgqRia.png\",\r\n        \"maxQtyAllowed\":4\r\n    },\r\n    {\r\n        \"productName\":\"Samsung S12\",\r\n        \"price\":1500,\r\n        \"imageUrl\":\"https://www.einfo.co.nz/media/catalog/product/cache/815354ab74b8b2689b03cd87669d24a6/s/a/samsung-galaxy-s10-prism-green-1_12.jpg\",\r\n        \"maxQtyAllowed\":5\r\n    },\r\n    {\r\n        \"productName\":\"Oppo Reno\",\r\n        \"price\":800,\r\n        \"imageUrl\":\"https://burwoodmobile.com.au/wp-content/uploads/2020/09/oppo-reno-10x-zoom-5g-green-main.jpg\",\r\n        \"maxQtyAllowed\":6\r\n    },\r\n    {\r\n        \"productName\":\"Nokia 8.1\",\r\n        \"price\":400,\r\n        \"imageUrl\":\"https://th.bing.com/th/id/OIP.YKeOkFhHeVe_JBig6Ssd5AHaHa?pid=ImgDet&rs=1\",\r\n        \"maxQtyAllowed\":8\r\n    },\r\n    {\r\n        \"productName\":\"Motorola Edge\",\r\n        \"price\":2000,\r\n        \"imageUrl\":\"https://ib.canaltech.com.br/421267.jpeg\",\r\n        \"maxQtyAllowed\":1\r\n    }\r\n    ]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8181/saveProducts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"saveProducts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

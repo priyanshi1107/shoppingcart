@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--stylesheet-->
+    <link th:rel="stylesheet" th:href="@{/user.css}"/>
+
+    <!--Bootstrap-->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+    />
+
+    <!--jQuery-->
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"
+    ></script>
+
+    <!--Font Awesome-->
+    <script
+            src="https://kit.fontawesome.com/2b80ceb1da.js"
+            crossorigin="anonymous"
+    ></script>
+
+    <!--Google Font-->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+    />
+
+    <!--Title-->
+    <title>User Form</title>
+
+    <style></style>
+</head>
+
+<body>
+<h2 class="display-6">User Details</h2>
+<form action="#" th:action="@{/saveFormData}" th:object="${userDto}" onsubmit="return validate()" method="post">
+    <div class="row" style="width: 1200px">
+        <div class="col">
+            <div class="form-group col-md">
+                <label for="firstname" class="col-md-2 col-form-label">First Name</label>
+                <input type="text"
+                       class="form-control name-field"
+                       id="firstname"
+                       name="firstName"
+                       placeholder="firstName"
+                />
+            </div>
+            <small class="form-text text-danger name-field-msg "></small>
+            <div class="form-group col-md">
+                <label for="staticEmail" class="col-md-2 col-form-label">Email</label>
+                <input
+                        type="text"
+                        class="form-control email-field"
+                        id="staticEmail"
+                        name="email"
+                        placeholder="email"
+                />
+            </div>
+            <small class="form-text text-danger email-field-msg"></small>
+
+            <h3 class="billing">Billing Address</h3>
+
+            <div id="billingAddress">
+
+                <div class="form-group col-md">
+                    <label for="addressLine11" class="col-md-2 col-form-label">AddressLine1</label>
+                    <input type="text"
+                           class="form-control addressLine-field-11"
+                           id="addressLine11"
+                           name="billingAddress1"
+                           placeholder="billingAddress1"
+                    />
+                </div>
+                <small class="form-text text-danger addressLine-field-msg-11"></small>
+
+                <div class="form-group col-md">
+                    <label for="addressLine12" class="col-md-2 col-form-label">AddressLine2</label>
+                    <input type="text"
+                           class="form-control addressLine-field-12"
+                           id="addressLine12"
+                           name="billingAddress2"
+                           placeholder="billingAddress2"
+                    />
+                </div>
+                <small class="form-text text-danger addressLine-field-msg-12"></small>
+
+                <div class="form-group col-md">
+                    <label for="city1" class="col-md-2 col-form-label">City</label>
+                    <input type="text"
+                           class="form-control city-field-1"
+                           id="city1"
+                           name="city1"
+                           placeholder="city"
+                    />
+                </div>
+                <small class="form-text text-danger city-field-msg-1"></small>
+
+                <div class="form-group col-md">
+                    <label for="state1" class="col-md-2 col-form-label">State</label>
+                    <input type="text"
+                           class="form-control state-field-1"
+                           id="state1"
+                           name="state1"
+                           placeholder="state"
+                    />
+                </div>
+                <small class="form-text text-danger state-field-msg-1"></small>
+
+                <div class="form-group col-md">
+                    <label for="country1" class="col-md-2 col-form-label">Country</label>
+                    <input type="text"
+                           class="form-control country-field-1"
+                           id="country1"
+                           name="country1"
+                           placeholder="country"
+                    />
+                </div>
+                <small class="form-text text-danger country-field-msg-1"></small>
+
+                <div class="form-group col-md">
+                    <label for="zipcode1" class="col-md-2 col-form-label">Zip Code</label>
+                    <input type="text"
+                           class="form-control zipcode-field-1"
+                           id="zipcode1"
+                           name="zipCode1"
+                           placeholder="zipCode"
+                    />
+                </div>
+                <small class="form-text text-danger zipcode-field-msg-1"></small>
+
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="form-group col-md">
+                <label for="lastname" class="col-md-2 col-form-label">Last Name</label>
+                <input type="text"
+                       class="form-control last-name-field"
+                       id="lastname"
+                       name="lastName"
+                       placeholder="lastName"
+                />
+            </div>
+            <small class="form-text text-danger last-name-field-msg"></small>
+            <div class="form-group col-md">
+                <label for="Phone" class="col-md-2 col-form-label">Phone</label>
+                <input type="text"
+                       class="form-control phone-field"
+                       id="phone"
+                       name="phone"
+                       placeholder="9999999999"
+                />
+            </div>
+            <small class="form-text text-danger phone-field-msg"></small>
+            <div class="form-group col-md">
+                <div class="form-check">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="defaultCheck1"
+                    />
+                    <label class="form-check-label" for="defaultCheck1">
+                        Shipping Address Same As Billing Address
+                    </label>
+                </div>
+            </div>
+
+            <h3>Shipping Address</h3>
+
+            <div id="shippingAddress">
+
+                <div class="form-group col-md">
+                    <label for="addressLine21" class="col-md-2 col-form-label">AddressLine1</label>
+                    <input type="text"
+                           class="form-control addressLine-field-21"
+                           id="addressLine21"
+                           name="shippingAddress1"
+                           placeholder="shippingAddress1"
+                    />
+                </div>
+                <small class="form-text text-danger addressLine-field-msg-21"></small>
+
+                <div class="form-group col-md">
+                    <label for="addressLine22" class="col-md-2 col-form-label">AddressLine2</label>
+                    <input type="text"
+                           class="form-control addressLine-field-22"
+                           id="addressLine22"
+                           name="shippingAddress2"
+                           placeholder="shippingAddress2"
+                    />
+                </div>
+                <small class="form-text text-danger addressLine-field-msg-22"></small>
+
+                <div class="form-group col-md">
+                    <label for="city2" class="col-md-2 col-form-label">City</label>
+                    <input type="text"
+                           class="form-control city-field-2"
+                           id="city2"
+                           name="city2"
+                           placeholder="city"
+                    />
+                </div>
+                <small class="form-text text-danger city-field-msg-2"></small>
+
+                <div class="form-group col-md">
+                    <label for="state2" class="col-md-2 col-form-label">State</label>
+                    <input type="text"
+                           class="form-control state-field-2"
+                           id="state2"
+                           name="state2"
+                           placeholder="state"
+                    />
+                </div>
+                <small class="form-text text-danger state-field-msg-2"></small>
+
+                <div class="form-group col-md">
+                    <label for="country2" class="col-md-2 col-form-label">Country</label>
+                    <input type="text"
+                           class="form-control country-field-2"
+                           id="country2"
+                           name="country2"
+                           placeholder="country"
+                    />
+                </div>
+                <small class="form-text text-danger country-field-msg-2"></small>
+
+                <div class="form-group col-md">
+                    <label for="zipcode2" class="col-md-2 col-form-label">Zip Code</label>
+                    <input type="text"
+                           class="form-control zipcode-field-2"
+                           id="zipcode2"
+                           name="zipCode2"
+                           placeholder="zipCode"
+                    />
+                </div>
+                <small class="form-text text-danger zipcode-field-msg-2"></small>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="buttons">
+        <!--    <a style="width: 150px" href="#" class="btn btn-dark">Save</a>-->
+        <button style="width: 150px" th:href="@{/saveFormData}" class="btn btn-dark ">save</button>
+        <a style="width: 150px" href="#" class="btn btn-outline-info">Cancel</a>
+    </div>
+</form>
+<!--Bootstrap >>FontAwesome -->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://kit.fontawesome.com/2b80ceb1da.js"
+        crossorigin="anonymous"
+></script>
+
+<script type="text/javascript" th:src="@{/user.js}"></script>
+</body>
+</html>

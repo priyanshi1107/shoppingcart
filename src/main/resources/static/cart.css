@@ -1,0 +1,45 @@
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+.border-none{
+  border:none;
+}
+.display-6{
+    margin-top:20px;
+}
+
+table {
+  width: 1200px;
+  margin-top: 30px;
+}
+
+.essentials{
+    position: relative;
+    top: 15px;
+    /* left:300px; */
+}
+
+th, td{
+ text-align: center;
+ margin-top:40px;
+ vertical-align: middle;
+}
+
+thead>tr>th{
+  text-align: center;
+}
+
+.buttons>*{
+    margin-right: 30px;
+    padding: 10px;
+    width:180px;
+}
+
+.eval{
+  display:absolute;
+  right:10px;
+}

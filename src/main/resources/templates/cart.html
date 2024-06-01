@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--stylesheet-->
+    <link th:rel="stylesheet" th:href="@{/cart.css}"/>
+
+    <!--Bootstrap-->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+    />
+
+    <!--jQuery-->
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"
+    ></script>
+
+    <!--Font Awesome-->
+    <script
+            src="https://kit.fontawesome.com/2b80ceb1da.js"
+            crossorigin="anonymous"
+    ></script>
+
+    <!--Google Font-->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+    />
+
+    <!--Title-->
+    <title>Shopping Cart</title>
+
+    <style></style>
+</head>
+
+<body>
+<h2 class="display-6">Shopping Cart</h2>
+<form action="#" th:action="@{/transferData}" th:object="${orderDto}" method="get">
+    <table style="width: 1000px" class="table table-bordered border-dark">
+        <thead>
+        <tr>
+            <th scope="col" style="width: 10%">SR No</th>
+            <th scope="col" style="width: 20%">Product Name</th>
+            <th scope="col" style="width: 20%">Image</th>
+            <th scope="col" style="width: 15%">Price($)</th>
+            <th scope="col" style="width: 10%">Qty</th>
+            <th scope="col" style="width: 15%">Total</th>
+            <th scope="col" style="width: 10%">Action</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+        <tr>
+            <td colspan="5" rowspan="3" class="">
+                <div class="essentials">
+                    <div class="buttons">
+                        <a th:href="@{/all}" class="btn btn-primary btn-md">Continue Shopping</a>
+                        <button th:href="@{/transferData}"  onclick=" return nextAlert()" class="btn btn-success btn-md">Next</button>
+                        <a onclick="return evaluation()" class="btn btn-secondary btn-md">Update Cart</a>
+                    </div>
+                </div>
+            </td>
+            <td colspan="2">Sub Total: <input class="eval border-none" id="subtotal" name="subTotal" style="width:100px;text-align:center"
+                                              readonly></input></td>
+        </tr>
+        <tr>
+            <td colspan="2">Total Tax: <input class="eval border-none" id="totaltax" name="totalTax" style="width:100px;text-align:center"
+                                              readonly></input></td>
+        </tr>
+        <tr>
+            <td colspan="2">Grand Total: <input class="eval border-none" id="grandtotal" name="grandTotal" style="width:100px;text-align:center"
+                                                readonly></input></td>
+        </tr>
+        </tr>
+    </table>
+</form>
+
+<!--Bootstrap >>FontAwesome -->
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://kit.fontawesome.com/2b80ceb1da.js"
+        crossorigin="anonymous"
+></script>
+<script type="text/javascript" th:src="@{/cart.js}"></script>
+</body>
+</html>
