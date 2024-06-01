@@ -42,7 +42,7 @@ And the code is organized as this:
 
 # Database
 
-* Database : MySql (Schema: shoppingcart, Username : root, Password : aayu13)
+* Database : MySql (Schema: shoppingcart, Username : your_username, Password : your_password)
 * Other required details you can find in `application.properties`.
 
 
